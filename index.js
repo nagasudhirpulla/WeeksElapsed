@@ -21,6 +21,8 @@ function drawOnDiv() {
     elapsedWeeks = Math.floor((date - dateBirth) / one_week);
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
+    //using half pixel trick to solve blurring problem
+    ctx.translate(0.5, 0.5)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     var iterator = 1;
     ctx.fillStyle = "#FF0000";
